@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Id of navigation graph matches id of the bottom_nav_menu.xml item (to make bottom menu navigation work).-->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardNavGraph"
+        app:startDestination="@id/cardListFragment">
+    <fragment
+            android:id="@+id/cardListFragment"
+            android:name="com.gabrielgrs2.feature.cardlist.presentation.screen.list.CardListFragment"
+            android:label="CardListFragment">
+<!--        <action-->
+<!--                android:id="@+id/actionCardListToCardDetail"-->
+<!--                app:destination="@id/cardDetailFragment" />-->
+    </fragment>
+</navigation>
