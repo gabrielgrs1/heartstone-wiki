@@ -30,7 +30,7 @@ jobs:
             gradle-${{ hashFiles('gradle-checksums.txt') }}-
 
       - name: unitTest
-        run: ./gradlew test
+        run: ./gradlew test jacocoTestReport
 
       - uses: actions/upload-artifact@v3
         with:

@@ -33,9 +33,15 @@ jobs:
             gradle-${{ hashFiles('gradle-checksums.txt') }}-
 
       - name: Build App
-        run: ./gradlew :app:assembleDebug --no-build-cache
+        run: ./gradlew :app:assembleDebug jacocoTestReport --no-build-cache
 
       - uses: actions/upload-artifact@v3
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Upload coverage to Codecov
+          run: |
+            curl -Os https://uploader.codecov.io/latest/macos/codecov
+            chmod +x codecov
+            ./codecov
