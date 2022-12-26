@@ -41,10 +41,34 @@ internal class CardListViewModel(
         }
     }
 
-//    fun onCardClicked(album: Card) {
-//        val navDirections =
-//            CardListFragmentDirections.actionAlbumListToAlbumDetail()
-//
-//        navManager.navigate(navDirections)
-//    }
+    fun onCardClicked(
+        image: String,
+        name: String,
+        flavor: String,
+        description: String,
+        cardSet: String,
+        type: String,
+        rarity: String,
+        faction: String,
+        cost: Int,
+        attack: Int,
+        health: Int,
+    ) {
+        val navDirections =
+            CardListFragmentDirections.actionCardListToCardDetail(
+                image = image,
+                name = name,
+                flavor = flavor,
+                description = description,
+                cardSet = cardSet,
+                type = type,
+                rarity = rarity,
+                faction = faction,
+                cost = cost,
+                attack = attack,
+                health = health
+            )
+
+        navManager.navigate(navDirections)
+    }
 }

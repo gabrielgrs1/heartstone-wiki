@@ -5,4 +5,5 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
     id 'de.mannodermaus.android-junit5' version '1.8.2.1' apply false
     id 'io.gitlab.arturbosch.detekt' version '1.22.0' apply false
+    id 'androidx.navigation.safeargs.kotlin' version '2.5.3' apply false
 }

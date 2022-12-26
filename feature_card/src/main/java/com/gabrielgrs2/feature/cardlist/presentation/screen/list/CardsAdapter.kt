@@ -11,16 +11,17 @@ class CardsAdapter(
     private val cardList: List<Card>,
     private val context: Context
 ) : RecyclerView.Adapter<CardsViewHolder>() {
-
+    var onItemClick: ((Card) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardsViewHolder {
         return CardsViewHolder(
-            LayoutInflater.from(context).inflate(R.layout.item_card, parent, false)
+            LayoutInflater.from(context).inflate(R.layout.item_card, parent, false),
+            onItemClick
         )
     }
 
     override fun onBindViewHolder(holder: CardsViewHolder, position: Int) {
-            holder.bind(context, cardList[position])
+        holder.bind(context, cardList[position])
 
     }
 

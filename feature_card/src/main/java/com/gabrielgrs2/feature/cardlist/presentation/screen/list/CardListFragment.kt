@@ -28,7 +28,13 @@ class CardListFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         observeUiState()
-        viewModel.onEnter()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (savedInstanceState == null) {
+            viewModel.onEnter()
+        }
     }
 
     private fun observeUiState() {
@@ -53,6 +59,25 @@ class CardListFragment : BaseFragment() {
     private fun initAdapter(cardList: List<Card>) {
         toggleLoading(false)
         val cardsAdapter = CardsAdapter(cardList, requireActivity())
+        initCardClickListener(cardsAdapter)
         binding.cardListRv.adapter = cardsAdapter
+    }
+
+    private fun initCardClickListener(cardsAdapter: CardsAdapter) {
+        cardsAdapter.onItemClick = { card ->
+            viewModel.onCardClicked(
+                image = card.image,
+                name = card.name,
+                flavor = card.flavor,
+                description = card.description,
+                cardSet = card.cardSet,
+                type = card.type,
+                rarity = card.rarity,
+                faction = card.faction,
+                cost = card.cost,
+                attack = card.attack,
+                health = card.health
+            )
+        }
     }
 }

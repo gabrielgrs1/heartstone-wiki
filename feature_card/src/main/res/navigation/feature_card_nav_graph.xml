@@ -1,15 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Id of navigation graph matches id of the bottom_nav_menu.xml item (to make bottom menu navigation work).-->
+<?xml version="1.0" encoding="utf-8"?><!-- Id of navigation graph matches id of the bottom_nav_menu.xml item (to make bottom menu navigation work).-->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/cardNavGraph"
-        app:startDestination="@id/cardListFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardNavGraph"
+    app:startDestination="@id/cardListFragment">
+
     <fragment
-            android:id="@+id/cardListFragment"
-            android:name="com.gabrielgrs2.feature.cardlist.presentation.screen.list.CardListFragment"
-            android:label="CardListFragment">
-<!--        <action-->
-<!--                android:id="@+id/actionCardListToCardDetail"-->
-<!--                app:destination="@id/cardDetailFragment" />-->
+        android:id="@+id/cardListFragment"
+        android:name="com.gabrielgrs2.feature.cardlist.presentation.screen.list.CardListFragment"
+        android:label="CardListFragment">
+        <action
+            android:id="@+id/actionCardListToCardDetail"
+            app:destination="@id/cardDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cardDetailFragment"
+        android:name="com.gabrielgrs2.feature.cardlist.presentation.screen.detail.CardDetailFragment"
+        android:label="CardDetailFragment">
+        <argument
+            android:name="image"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="flavor"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="cardSet"
+            app:argType="string" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="rarity"
+            app:argType="string" />
+        <argument
+            android:name="faction"
+            app:argType="string" />
+        <argument
+            android:name="cost"
+            app:argType="integer" />
+        <argument
+            android:name="attack"
+            app:argType="integer" />
+        <argument
+            android:name="health"
+            app:argType="integer" />
+        <action
+            android:id="@+id/actionCardDetailToCardList"
+            app:destination="@id/cardListFragment" />
     </fragment>
 </navigation>
