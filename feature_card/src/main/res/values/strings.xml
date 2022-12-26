@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="card_content_description">Card Image</string>
     <string name="get_cards_error">Erro ao carregar os cards</string>
     <string name="show_details_error">Erro ao carregar o card</string>
-    <string name="card_no_description">Sem descrição</string>
 
     <string name="card_list_attack_label">Ataque %d</string>
     <string name="card_list_health_label">Vida %d</string>
