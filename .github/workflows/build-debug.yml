@@ -30,7 +30,7 @@ jobs:
             gradle-${{ hashFiles('gradle-checksums.txt') }}-
 
       - name: Build App
-        run: chmod +x ./gradlew :app:assembleDebug jacocoTestReport --no-build-cache
+        run: ./gradlew :app:assembleDebug jacocoTestReport --no-build-cache
 
       - uses: actions/upload-artifact@v3
         with:
