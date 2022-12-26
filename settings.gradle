@@ -14,5 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Heartstone CardWiki"
 include ':app'
-include ':feature_cardlist'
-include ':feature_carddetail'
+include ':feature_card'
+include ':feature_base'
