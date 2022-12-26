@@ -1,4 +1,4 @@
-name: build debug
+name: Push & Pull Request Pipe
 
 on:
   push:
@@ -38,7 +38,6 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
 
       - name: Upload coverage to Codecov
-          run: |
-            curl -Os https://uploader.codecov.io/latest/macos/codecov
-            chmod +x codecov
-            ./codecov
+          run: curl -Os https://uploader.codecov.io/latest/macos/codecov
+              chmod +x codecov
+              ./codecov

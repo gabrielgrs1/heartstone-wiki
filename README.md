@@ -3,11 +3,10 @@
 [![Kotlin Version](https://img.shields.io/badge/Kotlin-1.7.x-blue.svg)](https://kotlinlang.org)
 [![AGP](https://img.shields.io/badge/AGP-7.x-blue?style=flat)](https://developer.android.com/studio/releases/gradle-plugin)
 [![Gradle](https://img.shields.io/badge/Gradle-7.x-blue?style=flat)](https://gradle.org)
-[![API Level](https://android-arsenal.com/api?level=23)](https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat)
 
 [![CodeBeat Badge](https://codebeat.co/badges/0872549a-6e75-41f5-ac43-e33b6bab14a1)](https://codebeat.co/projects/github-com-gabrielgrs1-heartstone-wiki-master)
 [![CodeFactor](https://www.codefactor.io/repository/github/gabrielgrs1/heartstone-wiki/badge)](https://www.codefactor.io/repository/github/gabrielgrs1/heartstone-wiki)
-[![Build Status](https://github.com/gabrielgrs1/github-repos-listing-app/workflows/Android%20CI%20(Push)/badge.svg)](https://github.com/gabrielgrs1/github-repos-listing-app/actions)
+[![Build Status](https://github.com/gabrielgrs1/heartstone-wiki/workflows/Android%20CI%20(Push)/badge.svg)](https://github.com/gabrielgrs1/heartstone-wiki/actions)
 [![codecov.io](https://codecov.io/github/gabrielgrs1/heartstone-wiki/branch/master/graph/badge.svg)](https://codecov.io/github/gabrielgrs1/heartstone-wiki)
 
 Android HeartStone Wiki project presents a modern approach to
@@ -53,12 +52,6 @@ The app has a few screens located in multiple feature modules:
 - Card list screen - displays list of card
 - Card detail screen - display information about the selected card
   <br/><br/>
-
-<p float="left">
-  <img src="misc/image/screen_album_list.webp" width="250" />
-  <img src="misc/image/screen_album_detail.webp" width="250" />
-  <img src="misc/image/screen_favorites.webp" width="250" />
-</p>
 
 ## Tech-Stack
 
