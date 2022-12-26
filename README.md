@@ -158,7 +158,7 @@ This layer is closest to what the user sees on the screen.
 The `presentation` layer mixes `MVVM` and `MVI` patterns:
 
 - `MVVM` - Jetpack `ViewModel` is used to encapsulate `common UI state`. It exposes the `state` via observable state
-  holder (`Kotlin Flow`)
+  holder (`Live Data`)
 
 
 Components:
