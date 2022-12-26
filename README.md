@@ -70,6 +70,7 @@ the libraries are in the stable version unless there is a good reason to use non
       lifecycle state changes
     * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - store and manage UI-related
       data in a lifecycle-aware way
+    * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata?hl=pt-br)
   * [Koin](https://insert-koin.io/) - dependency injection (dependency retrieval)
   * [Picasso](https://github.com/square/picasso) - image loading library
 * Modern Architecture
