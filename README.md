@@ -1,4 +1,4 @@
-# android-heartstone-wiki
+# Android Heartstone Wiki
 
 [![Kotlin Version](https://img.shields.io/badge/Kotlin-1.7.x-blue.svg)](https://kotlinlang.org)
 [![AGP](https://img.shields.io/badge/AGP-7.x-blue?style=flat)](https://developer.android.com/studio/releases/gradle-plugin)
@@ -6,7 +6,7 @@
 
 [![CodeBeat Badge](https://codebeat.co/badges/0872549a-6e75-41f5-ac43-e33b6bab14a1)](https://codebeat.co/projects/github-com-gabrielgrs1-heartstone-wiki-master)
 [![CodeFactor](https://www.codefactor.io/repository/github/gabrielgrs1/heartstone-wiki/badge)](https://www.codefactor.io/repository/github/gabrielgrs1/heartstone-wiki)
-[![Build Status](https://github.com/gabrielgrs1/heartstone-wiki/workflows/Android%20CI%20(Push)/badge.svg)](https://github.com/gabrielgrs1/heartstone-wiki/actions)
+[![Build Status](https://github.com/gabrielgrs1/heartstone-wiki/workflows/Push%20&%20Pull%20Request%20Pipe/badge.svg)](https://github.com/gabrielgrs1/heartstone-wiki/actions)
 [![codecov.io](https://codecov.io/github/gabrielgrs1/heartstone-wiki/branch/master/graph/badge.svg)](https://codecov.io/github/gabrielgrs1/heartstone-wiki)
 
 Android HeartStone Wiki project presents a modern approach to
