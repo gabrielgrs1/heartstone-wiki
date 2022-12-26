@@ -16,3 +16,4 @@ rootProject.name = "Heartstone CardWiki"
 include ':app'
 include ':feature_card'
 include ':feature_base'
+include ':library_test_utils'

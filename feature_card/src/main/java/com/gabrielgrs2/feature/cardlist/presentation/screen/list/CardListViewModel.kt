@@ -6,12 +6,13 @@ import androidx.lifecycle.viewModelScope
 import com.gabrielgrs2.base.domain.result.Result
 import com.gabrielgrs2.base.nav.NavManager
 import com.gabrielgrs2.base.presentation.viewmodel.BaseViewModel
-import com.gabrielgrs2.feature.cardlist.domain.usecase.GetAllCardsListUseCase
+import com.gabrielgrs2.feature.cardlist.domain.model.Card
+import com.gabrielgrs2.feature.cardlist.domain.usecase.GetCardListUseCase
 import kotlinx.coroutines.launch
 
 internal class CardListViewModel(
     private val navManager: NavManager,
-    private val getCardListUseCase: GetAllCardsListUseCase,
+    private val getCardListUseCase: GetCardListUseCase,
 ) : BaseViewModel() {
 
     private var _uiState = MutableLiveData<UiState>()
@@ -41,32 +42,20 @@ internal class CardListViewModel(
         }
     }
 
-    fun onCardClicked(
-        image: String,
-        name: String,
-        flavor: String,
-        description: String,
-        cardSet: String,
-        type: String,
-        rarity: String,
-        faction: String,
-        cost: Int,
-        attack: Int,
-        health: Int,
-    ) {
+    fun onCardClicked(card: Card) {
         val navDirections =
             CardListFragmentDirections.actionCardListToCardDetail(
-                image = image,
-                name = name,
-                flavor = flavor,
-                description = description,
-                cardSet = cardSet,
-                type = type,
-                rarity = rarity,
-                faction = faction,
-                cost = cost,
-                attack = attack,
-                health = health
+                image = card.image,
+                name = card.name,
+                flavor = card.flavor,
+                description = card.description,
+                cardSet = card.cardSet,
+                type = card.type,
+                rarity = card.rarity,
+                faction = card.faction,
+                cost = card.cost,
+                attack = card.attack,
+                health = card.health
             )
 
         navManager.navigate(navDirections)

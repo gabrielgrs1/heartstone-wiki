@@ -48,7 +48,7 @@ internal data class AllCardsResponse(
     @SerializedName("Unknown") val unknown: List<CardResponse>? = emptyList(),
     @SerializedName("Murder at Castle Nathria") val murderAtCastleNathria: List<CardResponse>? = emptyList(),
     @SerializedName("March of the Lich King") val marchOfTheLichKing: List<CardResponse>? = emptyList(),
-    @SerializedName("Path of Arthas") val pathOfArthas: List<CardResponse>? = emptyList(),
+    @SerializedName("Path of Arthas") val pathOfArthas: List<CardResponse>? = emptyList()
 ) : java.io.Serializable {
 
     fun groupAllResults(): List<CardResponse> {

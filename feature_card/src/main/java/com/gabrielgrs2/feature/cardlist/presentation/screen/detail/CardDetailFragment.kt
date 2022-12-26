@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.gabrielgrs2.base.presentation.activity.BaseFragment
+import com.gabrielgrs2.base.presentation.ext.toast
+import com.gabrielgrs2.feature.cardlist.domain.model.Card
 import com.gabrielgrs2.feature_cardlist.R
 import com.gabrielgrs2.feature_cardlist.databinding.FragmentCardDetailBinding
 import com.squareup.picasso.Picasso
@@ -29,144 +31,154 @@ class CardDetailFragment : BaseFragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        bindCard()
+        observeUiState()
+        viewModel.onEnter(args)
         bindBackButton()
+    }
 
+    private fun observeUiState() {
+        viewModel.uiState.observe(requireActivity()) {
+            when (it) {
+                is UiState.Content -> bindCard(it.card)
+                is UiState.Error -> handleError()
+            }
+        }
+    }
+
+    private fun handleError() {
+        requireActivity().toast(R.string.show_details_error)
     }
 
     private fun bindBackButton() {
-        binding.cardBackIv.setOnClickListener { requireActivity().onBackPressed() }
+        binding.cardBackIv.setOnClickListener { viewModel.onBackPressed() }
     }
 
-    private fun bindCard() {
-        binding.cardNameTv.text = args.name
-        binding.cardDescriptionTv.text = Html.fromHtml(args.description)
-        bindCardFlavor()
-        bindCardSet()
-        bindCardFaction()
-        bindCardType()
-        bindRaritySet()
-        bindCardAttack()
-        bindCardHelth()
-        bindCardCost()
-        bindCardImage()
+    private fun bindCard(card: Card) {
+        binding.cardNameTv.text = card.name
+        binding.cardDescriptionTv.text = Html.fromHtml(card.description)
+        bindCardFlavor(card.flavor)
+        bindCardSet(card.cardSet)
+        bindCardFaction(card.faction)
+        bindCardType(card.type)
+        bindRaritySet(card.rarity)
+        bindCardAttack(card.attack)
+        bindCardHealth(card.health)
+        bindCardCost(card.cost)
+        bindCardImage(card.image)
     }
 
-    private fun bindCardFlavor() {
-        if (args.cardSet.isNotEmpty()) {
-            binding.cardFlavorTv.text = args.flavor
+    private fun bindCardFlavor(flavor: String) {
+        if (flavor.isNotEmpty()) {
+            binding.cardFlavorTv.text = flavor
         } else {
             binding.cardFlavorTv.visibility = View.GONE
         }
-
     }
 
-    private fun bindCardImage() {
-        if (args.image.isNotEmpty()) {
+    private fun bindCardImage(image: String) {
+        if (image.isNotEmpty()) {
             Picasso
                 .with(context)
-                .load(args.image)
+                .load(image)
                 .placeholder(R.drawable.progress_animation)
                 .into(binding.cardImageIv)
         }
     }
 
-    private fun bindCardSet() {
-        if (args.cardSet.isNotEmpty()) {
+    private fun bindCardSet(cardSet: String) {
+        if (cardSet.isNotEmpty()) {
             binding.cardSetTv.text =
-                requireContext().getString(R.string.card_detail_set_label, args.cardSet)
+                resources.getString(R.string.card_detail_set_label, cardSet)
         } else {
             binding.cardSetTv.text =
-                requireContext().getString(
+                 resources.getString(
                     R.string.card_detail_set_label,
-                    Html.fromHtml(requireContext().getString(R.string.no_application))
+                    Html.fromHtml( resources.getString(R.string.no_application))
                 )
         }
     }
 
-    private fun bindCardFaction() {
-        if (args.faction.isNotEmpty()) {
+    private fun bindCardFaction(faction: String) {
+        if (faction.isNotEmpty()) {
             binding.cardFactionTv.text =
-                requireContext().getString(R.string.card_detail_faction_label, args.faction)
+                 resources.getString(R.string.card_detail_faction_label, faction)
         } else {
             binding.cardFactionTv.text =
-                requireContext().getString(
+                 resources.getString(
                     R.string.card_detail_faction_label,
-                    Html.fromHtml(requireContext().getString(R.string.no_application))
+                    Html.fromHtml( resources.getString(R.string.no_application))
                 )
         }
     }
 
-    private fun bindCardType() {
-        if (args.type.isNotEmpty()) {
+    private fun bindCardType(type: String) {
+        if (type.isNotEmpty()) {
             binding.cardTypeTv.text =
-                requireContext().getString(R.string.card_detail_type_label, args.type)
+                 resources.getString(R.string.card_detail_type_label, type)
         } else {
             binding.cardTypeTv.text =
-                requireContext().getString(
+                 resources.getString(
                     R.string.card_detail_type_label,
-                    Html.fromHtml(requireContext().getString(R.string.no_application))
+                    Html.fromHtml( resources.getString(R.string.no_application))
                 )
         }
     }
 
-    private fun bindRaritySet() {
-        if (args.rarity.isNotEmpty()) {
+    private fun bindRaritySet(rarity: String) {
+        if (rarity.isNotEmpty()) {
             binding.cardRarityTv.text =
-                requireContext().getString(R.string.card_detail_rarity_label, args.rarity)
+                 resources.getString(R.string.card_detail_rarity_label, rarity)
 
         } else {
             binding.cardRarityTv.text =
-                requireContext().getString(
+                 resources.getString(
                     R.string.card_detail_rarity_label,
-                    Html.fromHtml(requireContext().getString(R.string.no_application))
+                    Html.fromHtml( resources.getString(R.string.no_application))
                 )
         }
     }
 
-    private fun bindCardCost() {
-        if (args.cost > 0) {
+    private fun bindCardCost(cost: Int) {
+        if (cost > 0) {
             binding.cardCoastTv.text =
-                requireContext().getString(R.string.card_detail_cost_label, args.cost.toString())
-
+                 resources.getString(R.string.card_detail_cost_label, cost.toString())
         } else {
             binding.cardCoastTv.text =
-                requireContext().getString(
+                 resources.getString(
                     R.string.card_detail_cost_label,
-                    Html.fromHtml(requireContext().getString(R.string.no_application))
+                    Html.fromHtml( resources.getString(R.string.no_application))
                 )
         }
     }
 
-    private fun bindCardHelth() {
-        if (args.health > 0) {
+    private fun bindCardHealth(health: Int) {
+        if (health > 0) {
             binding.cardHealthTv.text =
-                requireContext().getString(
+                 resources.getString(
                     R.string.card_detail_health_label,
-                    args.health.toString()
+                    health.toString()
                 )
         } else {
             binding.cardHealthTv.text =
-                requireContext().getString(
+                 resources.getString(
                     R.string.card_detail_health_label,
-                    Html.fromHtml(requireContext().getString(R.string.no_application))
+                    Html.fromHtml( resources.getString(R.string.no_application))
                 )
-
         }
     }
 
-    private fun bindCardAttack() {
-        if (args.attack > 0) {
+    private fun bindCardAttack(attack: Int) {
+        if (attack > 0) {
             binding.cardAttackTv.text =
-                requireContext().getString(
+                 resources.getString(
                     R.string.card_detail_attack_label,
-                    args.attack.toString()
+                    attack.toString()
                 )
         } else {
             binding.cardAttackTv.text =
-                requireContext().getString(
+                 resources.getString(
                     R.string.card_detail_attack_label,
-                    Html.fromHtml(requireContext().getString(R.string.no_application))
+                    Html.fromHtml( resources.getString(R.string.no_application))
                 )
         }
     }

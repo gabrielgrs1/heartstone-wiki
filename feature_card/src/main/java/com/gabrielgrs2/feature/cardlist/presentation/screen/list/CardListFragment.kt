@@ -65,19 +65,7 @@ class CardListFragment : BaseFragment() {
 
     private fun initCardClickListener(cardsAdapter: CardsAdapter) {
         cardsAdapter.onItemClick = { card ->
-            viewModel.onCardClicked(
-                image = card.image,
-                name = card.name,
-                flavor = card.flavor,
-                description = card.description,
-                cardSet = card.cardSet,
-                type = card.type,
-                rarity = card.rarity,
-                faction = card.faction,
-                cost = card.cost,
-                attack = card.attack,
-                health = card.health
-            )
+            viewModel.onCardClicked(card)
         }
     }
 }
