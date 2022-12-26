@@ -211,7 +211,7 @@ data into objects.
 
 ### Data Flow
 
-The below diagram presents application data flow when a user interacts with the `album list screen`:
+The below diagram presents application data flow when a user interacts with the `card list screen`:
 
 <!--- Upload diagram image -->
 
