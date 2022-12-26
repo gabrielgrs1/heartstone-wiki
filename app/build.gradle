@@ -5,6 +5,9 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
+def Properties properties = new Properties()
+properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
 android {
     namespace 'com.gabrielgrs2.heartstonecardwiki'
     compileSdk 33
@@ -22,7 +25,7 @@ android {
             useSupportLibrary true
         }
         buildConfigField("String", "BASE_URL", '"https://omgvamp-hearthstone-v1.p.rapidapi.com/"')
-        buildConfigField("String", "API_TOKEN", '"bdd54923d8msh2ce60e059f6d8e0p1874bbjsnc8182651572d"')
+        buildConfigField("String", "API_TOKEN", properties.getProperty("apiToken"))
 
     }
 
