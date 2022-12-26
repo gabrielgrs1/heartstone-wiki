@@ -111,9 +111,9 @@ internal data class CardResponse(
     @SerializedName("type") val type: String? = "",
     @SerializedName("rarity") val rarity: String? = "",
     @SerializedName("faction") val faction: String? = "",
-    @SerializedName("cost") val cost: Int? = 0,
-    @SerializedName("attack") val attack: Int? = 0,
-    @SerializedName("health") val health: Int? = 0
+    @SerializedName("cost") val cost: Int = 0,
+    @SerializedName("attack") val attack: Int = 0,
+    @SerializedName("health") val health: Int = 0
 ) : java.io.Serializable
 
 internal fun CardResponse.toDomainModel(): Card {

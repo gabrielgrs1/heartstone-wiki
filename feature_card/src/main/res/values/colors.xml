@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="background">#E8D3A5</color>
     <color name="card_title">#614326</color>
     <color name="card_description">#19130E</color>
-    <color name="background">#E8D3A5</color>
+    <color name="card_health">#672A24</color>
+    <color name="card_attack">#999726</color>
 </resources>
