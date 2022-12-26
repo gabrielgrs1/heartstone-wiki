@@ -20,7 +20,7 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
-        buildConfigField("String", "apiBaseUrl", "https://omgvamp-hearthstone-v1.p.rapidapi.com/")
+        buildConfigField("String", "apiBaseUrl", '"https://omgvamp-hearthstone-v1.p.rapidapi.com/"')
 
     }
 
