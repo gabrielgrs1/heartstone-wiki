@@ -155,7 +155,7 @@ Each feature module contains non-layer components and 3 layers with a distinct s
 
 This layer is closest to what the user sees on the screen.
 
-The `presentation` layer mixes `MVVM` and `MVI` patterns:
+The `presentation` layer mixes `MVVM` patterns:
 
 - `MVVM` - Jetpack `ViewModel` is used to encapsulate `common UI state`. It exposes the `state` via observable state
   holder (`Live Data`)
