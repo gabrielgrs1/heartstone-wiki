@@ -49,7 +49,13 @@ The app has a few screens located in multiple feature modules:
 
 - Card list screen - displays list of card
 - Card detail screen - display information about the selected card
-  <br/><br/>
+  <br/>
+  
+<p float="center">
+  <img src="images/card-list.png" width="250" />
+  <img src="images/card-detail-1.png" width="250" />
+  <img src="images/card-detail-2.png" width="250" />
+</p>
 
 ## Tech-Stack
 
