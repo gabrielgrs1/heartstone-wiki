@@ -155,7 +155,7 @@ Each feature module contains non-layer components and 3 layers with a distinct s
 
 This layer is closest to what the user sees on the screen.
 
-The `presentation` layer mixes `MVVM` and `MVI` patterns:
+The `presentation` layer mixes `MVVM` patterns:
 
 - `MVVM` - Jetpack `ViewModel` is used to encapsulate `common UI state`. It exposes the `state` via observable state
   holder (`Live Data`)
@@ -255,7 +255,7 @@ There are a few ways to open this project.
 1. `Android Studio` -> `File` -> `New` -> `From Version control` -> `Git`
 2. Enter `https://github.com/gabrielgrs1/heartstone-wiki.git` into URL field and press `Clone` button
 3. Enter [HeartStone Wiki Api](https://rapidapi.com/omgvamp/api/hearthstone) and get api key
-4. Input apiKey on `apiToken` variable
+4. Input apiKey on `apiToken` variable on `local.properties`
 
 ## Inspiration
 
