@@ -134,8 +134,6 @@ The modularized code-base approach provides a few benefits:
 
 This diagram presents dependencies between project modules (Gradle sub-projects).
 
-<!--- Upload diagram image -->
-
 We have three kinds of modules in the application:
 
 - `app` module - this is the main module. It contains code that wires multiple modules together (class, dependency
@@ -149,13 +147,17 @@ We have three kinds of modules in the application:
 
 `Clean Architecture` is implemented at module level - each module contains its own set of Clean Architecture layers:
 
-<!--- Upload diagram image -->
+<p float="center">
+  <img src="images/feature_module_structure.png" width="250" />
+</p>
 
 > Notice that the `app` module and `library_x` modules structure differs a bit from the feature module structure.
 
 Each feature module contains non-layer components and 3 layers with a distinct set of responsibilities.
 
-<!--- Upload diagram image -->
+<p float="center">
+  <img src="images/feature_module_layers.png" width="250" />
+</p>
 
 #### Presentation Layer
 
