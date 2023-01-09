@@ -2,7 +2,6 @@ package com.gabrielgrs2.feature.cardlist.presentation.screen.detail
 
 import com.gabrielgrs2.base.nav.NavManager
 import com.gabrielgrs2.feature.cardlist.domain.model.Card
-import com.gabrielgrs2.feature.cardlist.presentation.screen.list.CardListFragmentDirections
 import com.gabrielgrs2.library.testutils.CoroutinesTestDispatcherExtension
 import com.gabrielgrs2.library.testutils.InstantTaskExecutorExtension
 import io.mockk.coVerify
@@ -94,20 +93,6 @@ class CardDetailViewModelTest {
     @Test
     fun `onBackClick navigate to cards list`() {
         // given
-        val card = Card(
-            image = "image",
-            name = "card name",
-            flavor = "flavor",
-            description = "description",
-            cardSet = "card set",
-            type = "type",
-            rarity = "rarity",
-            faction = "faction",
-            cost = 2,
-            attack = 3,
-            health = 2
-        )
-
         val navDirections = CardDetailFragmentDirections.actionCardDetailToCardList()
 
         // when

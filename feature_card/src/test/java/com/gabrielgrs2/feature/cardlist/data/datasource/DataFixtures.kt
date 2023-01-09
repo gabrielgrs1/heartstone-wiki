@@ -10,7 +10,7 @@ object DataFixtures {
         getCardApiModel()
     )
 
-    internal fun getCardApiModel(
+    private fun getCardApiModel(
         name: String = "name",
         image: String = "image",
         flavor: String = "flavor",

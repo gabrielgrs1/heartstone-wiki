@@ -31,7 +31,7 @@ class CardRepositoryImplTest {
 
         // then
         val cardsDomain: ArrayList<Card> = arrayListOf()
-        val allCards = DataFixtures.ApiResponse.getAllCardsResponse()
+        DataFixtures.ApiResponse.getAllCardsResponse()
             .groupAllResults().map {
                 cardsDomain.add(it.toDomainModel())
             }

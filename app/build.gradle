@@ -25,7 +25,7 @@ android {
             useSupportLibrary true
         }
         buildConfigField("String", "BASE_URL", '"https://omgvamp-hearthstone-v1.p.rapidapi.com/"')
-        buildConfigField("String", "API_TOKEN", properties.getProperty("apiToken"))
+        buildConfigField("String", "API_TOKEN", properties.getProperty("apiToken", ""))
 
     }
 
