@@ -23,13 +23,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     packagingOptions {
-        exclude "META-INF/AL2.0"
-        exclude "META-INF/licenses/**"
-        exclude "**/attach_hotspot_windows.dll"
-        exclude "META-INF/LGPL2.1"
+        jniLibs {
+            excludes += ['META-INF/licenses/**']
+        }
+        resources {
+            excludes += ['META-INF/AL2.0', 'META-INF/licenses/**', '**/attach_hotspot_windows.dll', 'META-INF/LGPL2.1']
+        }
     }
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
@@ -41,14 +43,14 @@ android {
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.7.21'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.9.10'
 
     implementation 'org.amshove.kluent:kluent-android:1.72'
-    implementation 'androidx.test:runner:1.5.1'
-    implementation 'androidx.test.espresso:espresso-core:3.5.0'
+    implementation 'androidx.test:runner:1.5.2'
+    implementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'io.mockk:mockk:1.13.3'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
-    implementation 'androidx.arch.core:core-testing:2.1.0'
+    implementation 'androidx.arch.core:core-testing:2.2.0'
     implementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
     implementation 'org.junit.jupiter:junit-jupiter-engine:5.9.1'
 
